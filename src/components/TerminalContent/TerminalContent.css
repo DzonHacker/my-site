@@ -1,0 +1,29 @@
+.terminal__contents {
+    display: flex;
+    color: whitesmoke;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.terminal__commandArea{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.terminal__hostname {
+    color: teal;
+}
+.terminal__input {
+    width: 100%;
+    background: #1E1E1E;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 5px;
+    color: whitesmoke;
+    caret-color: gray;
+}
+.disable__input {
+    pointer-events: none;
+}
