@@ -33,17 +33,38 @@
     margin-bottom: 20px;
 }
 
+
+@media screen and (min-width: 800px) {
+    .terminal__hostname, .terminal__input {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .terminal__hostname, .terminal__input {
         font-size: 0.9rem;
     }
+    .results {
+        font-size: 0.8rem;
+    }
     
 }
 
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 650px) {
+    .terminal__hostname, .terminal__input {
+        font-size: 0.8rem;
+    }
+    .results {
+        font-size: 0.6rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
+    .terminal__hostname, .terminal__input {
+        font-size: 0.7rem;
+    }
+    .results {
+        font-size: 0.5rem;
+    }
     
 }

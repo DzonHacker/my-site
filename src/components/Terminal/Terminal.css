@@ -7,7 +7,7 @@
     box-shadow: 7px 5px 27px #121212, -7px -5px 27px #111;
     border-radius: 10px 10px 20px 20px;
     flex-direction: column;
-
+    transition: all 0.3s ease-in;
 }
 
 .content__elements {
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
 }
 .terminal__cancleBtn{
     color: #111;
@@ -52,7 +53,7 @@
     text-decoration: none;
     text-align: center;
     vertical-align: center;
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .linktree__list_a:hover, .cv__a:hover {
@@ -68,7 +69,7 @@
         font-size: 1rem;
     }
     .terminal {
-        width: 70vh;
+        width: 100vh;
     }
 }
 
@@ -77,7 +78,14 @@
         font-size: 0.80rem;
     }
     .terminal {
-        width: 60vh;
+        width: 80vh;
+    }
+    .terminal__bar {
+        height: 25px;
+    }
+    .terminal__cancleBtn{
+        height: 20px !important;
+        width: 20px !important;
     }
 }
 
@@ -89,6 +97,13 @@
     .terminal {
         width: 50vh;
     }
+    .terminal__bar {
+        height: 20px;
+    }
+    .terminal__cancleBtn{
+        height: 15px !important;
+        width: 15px !important;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -98,5 +113,12 @@
     }
     .terminal {
         width: 45vh;
+    }
+    .terminal__bar {
+        height: 15px;
+    }
+    .terminal__cancleBtn{
+        height: 10px !important;
+        width: 10px !important;
     }
 }
