@@ -47,6 +47,9 @@
     overflow-y: hidden;
 }
 
+.linktree__list {
+    list-style: none;
+}
 
 .linktree__list_a, .cv__a {
     color: whitesmoke;

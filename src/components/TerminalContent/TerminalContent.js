@@ -36,6 +36,7 @@ const TerminalContent = (props) => {
         if(props.toClear){
             document.getElementById('terminal__inputId').value = ''
             document.getElementById('terminal__inputId').focus()
+            document.getElementById('terminal__inputId').classList.remove("disable__input")
         }
         
     },[props.toClear])
