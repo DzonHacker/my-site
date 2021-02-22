@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react'
 import './TerminalContent.css'
 const TerminalContent = (props) => {
- 
-    const [disableInput, setDisableInput] = useState(true)
-    //props.disable = false
-    
+
     const onKeyBtnDown = (event) => {
         if(event.keyCode == 13){
             let inputElement = document.getElementsByTagName('input')
@@ -19,20 +16,15 @@ const TerminalContent = (props) => {
     }
 
     let mycontents = props.output.map(out=>{
-        return Object.keys(out).map((val)=> {
+        return Object.keys(out).map((val,i)=> {
            return(
-               <div key={val} >
-                   {/* <div className="terminal__commandArea">
-                       <span className="terminal__hostname">Dzons:~ </span> 
-                       <input className="terminal__input" placeholder="help" onKeyUp={props.onPressed} onChange={props.onChanged} ></input>
-                   </div> */}
-
-                   <div>
+               <div key={val+i} >
+                   <div className="results">
                        {out[val]}
                    </div>
                    <div className="terminal__commandArea">
                        <span className="terminal__hostname">Dzons:~ </span> 
-                       <input id="terminal__inputId" className={`terminal__input`} placeholder="help" onKeyUp={props.onPressed} onChange={props.onChanged} onKeyDown={onKeyBtnDown} autoFocus></input>
+                       <input id="terminal__inputId" autoComplete="off" autoCorrect="off" className={`terminal__input`} placeholder="help" onKeyUp={props.onPressed} onChange={props.onChanged} onKeyDown={onKeyBtnDown} autoFocus></input>
                    </div>
                </div>
            )
@@ -53,7 +45,7 @@ const TerminalContent = (props) => {
          <div className="terminal__contents">
             <div className="terminal__commandArea">
                 <span className="terminal__hostname">Dzons:~ </span> 
-                <input id="terminal__inputId" className={`terminal__input`} placeholder="help" onKeyUp={props.onPressed} onChange={props.onChanged} onKeyDown={onKeyBtnDown} autoFocus ></input>
+                <input id="terminal__inputId" autoComplete="off" autoCorrect="off" className={`terminal__input`} placeholder="help" onKeyUp={props.onPressed} onChange={props.onChanged} onKeyDown={onKeyBtnDown} autoFocus ></input>
             </div>
              {
                  mycontents

@@ -11,21 +11,39 @@ const Terminal = (props) => {
     let oldCmdOutput = []
     const onKeyPressed = (event) => {
         if(event.keyCode == 13){
-            
             switch(command){           
                 case 'help':
                     showContent = (
                         <div>
-                            <p>getname</p>
-                            <p>getaddress</p>
-                            <p>getinfo</p>
-                            <p>getcv</p>
-                            <p>linktree</p>
-                            <p>clear</p>
+                            <div className="content__elements">
+                                <p>getname </p> 
+                                <span>Get Full Name Of the Owner</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>getaddress</p> 
+                                <span>Get Address/Phone Of the Owner</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>getinfo </p>
+                                <span>Get Info in Brief</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>viewcv </p>
+                                <span>View CV</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>linktree </p>
+                                <span>Get Social Site Links</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>clear </p>
+                                <span>Clear Terminal</span>
+                            </div>
+                            
                         </div>
                     )
                     oldCmdOutput = [...cmdOutput]
-                    setcmdOutput([...cmdOutput,{"hep":showContent}])
+                    setcmdOutput([...cmdOutput,{"help":showContent}])
                     setClear(false)
                     break
                 case 'getname':
@@ -43,6 +61,7 @@ const Terminal = (props) => {
                         <div>
                             <p>Dhapasi, Tokha, Kathmandu 44600</p>
                             <p>john.sherchan10@gmail.com</p>
+                            <p>+977 9860176702</p>
                         </div>
                     )
                     oldCmdOutput = [...cmdOutput]
@@ -62,8 +81,8 @@ const Terminal = (props) => {
                     setcmdOutput([...cmdOutput,{"getname":showContent}])
                     setClear(false)
                     break
-                case 'getcv':
-                    showContent = (<div><span>wget </span><a href="www.info.com">https</a></div>)
+                case 'viewcv':
+                    showContent = (<div><span>wget </span><a className="cv__a" href="#">https://mycv.com</a></div>)
                     oldCmdOutput = [...cmdOutput]
                     setcmdOutput([...cmdOutput,{"getname":showContent}])
                     setClear(false)
@@ -71,11 +90,15 @@ const Terminal = (props) => {
                 case 'linktree':
                     showContent = (
                         <div>
-                            <ul>
-                                <li><a href="#">instagram</a></li>
-                                <li><a href="#">facebook</a></li>
-                                <li><a href="#">linkedin</a></li>
-                                <li><a href="#">github</a></li>
+                            <p>====== Links ======</p>
+                            <p style={{marginBottom : "20px"}}>== Click To Redirect ==</p>
+                            <ul className="linktree">
+                                <li className="linktree__list"><a className="linktree__list_a" target="__blank" href="https://johnsherchan.com.np">Website</a></li>                   
+                                <li className="linktree__list"><a className="linktree__list_a" target="__blank" href="https://www.instagram.com/0x447a6f6e/">instagram  - @0x447a6f6e</a></li>
+                                <li className="linktree__list"><a className="linktree__list_a" target="__blank" href="https://www.instagram.com/cyber._.mancer/">instagram  - @cyber._.mancer</a></li>
+                                <li className="linktree__list"><a className="linktree__list_a" target="__blank" href="https://www.facebook.com/john.sherchan.9/">facebook</a></li>
+                                <li className="linktree__list"><a className="linktree__list_a" target="__blank" href="https://www.linkedin.com/in/john-sherchan-b4a0a2147/">linkedin</a></li>
+                                <li className="linktree__list"><a className="linktree__list_a" target="__blank" href="https://github.com/DzonHacker">github</a></li>
                             </ul>
                         </div>
                     )
@@ -90,25 +113,43 @@ const Terminal = (props) => {
                 default:
                     showContent = (
                         <div>
-                            <p>getname</p>
-                            <p>getaddress</p>
-                            <p>getinfo</p>
-                            <p>getcv</p>
-                            <p>linktree</p>
-                            <p>clear</p>
+                            <div className="content__elements">
+                                <p>getname </p> 
+                                <span>Get Full Name Of the Owner</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>getaddress</p> 
+                                <span>Get Address Of the Owner</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>getinfo </p>
+                                <span>Get Info in Brief</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>viewcv </p>
+                                <span>View CV</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>linktree </p>
+                                <span>Get Social Site Links</span>
+                            </div>
+                            <div className="content__elements">
+                                <p>clear </p>
+                                <span>Clear Terminal</span>
+                            </div>
+                            
                         </div>
                     )
                     oldCmdOutput = [...cmdOutput]
                     setcmdOutput([...cmdOutput,{"help":showContent}])
                     setClear(false)
-                    break
             }
         }
     }
 
 
     const onInputValueChanged = (event) =>{
-        let cmd = event.target.value.toString()
+        let cmd = event.target.value.toString().toLowerCase()
         setCommand(cmd)
     }
     return (

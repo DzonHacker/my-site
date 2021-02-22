@@ -27,3 +27,7 @@
 .disable__input {
     pointer-events: none;
 }
+
+.results {
+    margin-bottom: 20px;
+}
