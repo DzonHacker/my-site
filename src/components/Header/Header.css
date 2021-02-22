@@ -16,3 +16,16 @@
 .icon:hover {
     color: skyblue;
 }
+
+
+@media screen and (max-width: 800px) {
+    
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 400px) {
+    
+}
